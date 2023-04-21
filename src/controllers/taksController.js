@@ -29,7 +29,7 @@ export const updateTask = async(req, res) => {
     const {name, done} = req.body;
     try {
         const task = await Task.findOne({where:{id}})
-        task.name= name;
+        task.name= name; 
         task.done= done;
         await Task.save();
         res.status(200).json(task);
